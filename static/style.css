@@ -1,0 +1,38 @@
+:root{
+--bg:#0f0f10; /* near black */
+--card:#1b1b1c; /* dark grey */
+--muted:#bdbdbd;
+--accent:#e9e9e9;
+}
+
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Arial;background:var(--bg);color:var(--accent)}
+
+
+.bg-rotating{
+position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.06;
+background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><g fill="none" stroke="gray" stroke-width="2" opacity="0.8"><path d="M200 20 L220 60 L260 80"/><circle cx="200" cy="200" r="80" stroke-opacity="0.6"/></g></svg>');
+background-repeat:repeat;transform-origin:center;animation:spin 20s linear infinite;
+}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+
+.container{position:relative;z-index:2;max-width:720px;margin:48px auto;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:24px;box-shadow:0 6px 30px rgba(0,0,0,0.6)}
+header h1{margin:0;font-size:28px}
+.sub{color:var(--muted);margin-top:6px}
+
+
+.chat{margin-top:18px}
+.messages{min-height:300px;max-height:60vh;overflow:auto;padding:12px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+.message{margin:8px 0;padding:10px 12px;border-radius:8px;}
+.message.user{background:#222;color:var(--accent);text-align:right}
+.message.bot{background:#101214;border:1px solid rgba(255,255,255,0.02)}
+
+
+.askForm{display:flex;gap:8px;margin-top:12px}
+.askForm input{flex:1;padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--accent)}
+.askForm button{padding:10px 16px;border-radius:8px;border:none;background:#2b2b2c;color:var(--accent);cursor:pointer}
+
+
+.credits{color:var(--muted);font-size:13px;margin-top:14px;text-align:center}
