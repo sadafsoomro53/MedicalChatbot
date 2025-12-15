@@ -7,7 +7,7 @@ A sophisticated medical chatbot built using Retrieval Augmented Generation (RAG)
 - **RAG Architecture**: Combines LLM with vector database for accurate, context-aware responses
 - **HuggingFace Embeddings**: Uses `sentence-transformers/all-MiniLM-L6-v2` for text embeddings
 - **Pinecone Vector Database**: Fast and scalable vector storage for medical knowledge
-- **Google Gemini 2.5 Flash**: Powered by Google's latest Gemini model
+- **OpenAi gpt-4o**: Powered by Google's latest Gemini model
 - **LangChain Integration**: Seamless integration with LangChain for RAG pipeline
 - **Flask Web Interface**: Clean, modern web UI for interacting with the chatbot
 - **PDF Document Processing**: Automatically processes and chunks PDF documents
@@ -16,7 +16,7 @@ A sophisticated medical chatbot built using Retrieval Augmented Generation (RAG)
 
 - Python 3.8 or higher
 - Pinecone account (free tier available)
-- Google Gemini API key
+- Google gpt-4o key
 - Medical documents in PDF format
 
 ## 🛠️ Installation
@@ -52,12 +52,12 @@ Create a `.env` file in the root directory:
 
 ```env
 PINECONE_API_KEY=your_pinecone_api_key_here
-GEMINI_API_KEY=your_gemini_api_key_here
+OPENAI_API_KEY=your_openAi_api_key_here
 ```
 
 **How to get API keys:**
 - **Pinecone**: Sign up at [https://app.pinecone.io/](https://app.pinecone.io/) and get your API key from the dashboard
-- **Gemini**: Get your API key from [https://makersuite.google.com/app/apikey](https://makersuite.google.com/app/apikey)
+- **openAI**: Get your API key 
 
 ### 5. Prepare your medical documents
 
@@ -148,7 +148,7 @@ Edit `app.py` to use a different Gemini model:
 ```python
 chatModel = ChatGoogleGenerativeAI(
     model="gemini-pro",  # Change model here (options: gemini-pro, gemini-1.5-pro, etc.)
-    google_api_key=GEMINI_API_KEY,
+    OPENAI_api_key=OPENAI_API_KEY,
     temperature=0.7
 )
 ```
